@@ -1,0 +1,25 @@
+create or replace function fact
+(x number)
+return number
+is
+f number;
+begin
+if 
+x=1then
+f:=1;
+else
+f:=x*fact(x-1);
+end if;
+return f;
+end;
+/
+
+declare
+num number;
+factorial number;
+begin
+num:=5;
+factorial:=fact(num);
+dbms_output.put_line('factorial is ' || factorial);
+end;
+/
