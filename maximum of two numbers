@@ -1,0 +1,25 @@
+create or replace procedure findmax
+(x in number,
+y in number,
+z out number)
+is 
+begin
+if x>y then
+z:= x;
+else
+z:=y;
+end if;
+end;
+/
+
+declare 
+a number;
+b number;
+c number;
+begin
+a:=20;
+b:=30;
+findmax(a,b,c);
+dbms_output.put_line('maximum of two numbers is'|| c);
+end;
+/
