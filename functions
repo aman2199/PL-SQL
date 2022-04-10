@@ -1,0 +1,29 @@
+
+create table customer
+(id number(10), name varchar (20));
+
+INSERT INTO customer(id,name) VALUES (1,'AMAN');
+INSERT INTO customer(id,name) VALUES (2,'ANAND');
+INSERT INTO customer(id,name) VALUES (3,'AKASH');
+INSERT INTO customer(id,name) VALUES (4,'ROHIT');
+INSERT INTO customer(id,name) VALUES (5,'RAMESH');
+
+create or replace function totalcust
+return number
+is
+total number(2):=0;
+begin
+select count(*) into total from customer;
+return total;
+end;
+/
+
+declare 
+c number(2);
+begin
+c:= totalcust();
+dbms_output.put_line('total  is '||c);
+end;
+/
+
+
