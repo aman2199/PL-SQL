@@ -1,0 +1,15 @@
+create or replace procedure square
+(x in out number)
+is 
+begin
+x:=x*x;
+end;/
+
+declare
+a number;
+begin
+a:=40;
+square(a);
+dbms_output.put_line('the square of 40 is'|| a);
+end;
+/
