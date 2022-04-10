@@ -1,0 +1,33 @@
+CREATE TABLE USERS(ID NUMBER(10) PRIMARY KEY, NAME VARCHAR(100));
+
+CREATE OR REPLACE PROCEDURE INSRTUSR
+(ID IN NUMBER,NAME IN NUMBER)
+IS 
+BEGIN
+INSERT INTO USERS VALUES(ID , NAME);
+END;
+/
+
+BEGIN 
+INSERT INTO USERS (ID,NAME) VALUES (1,'AMAN');
+INSERT INTO USERS (ID,NAME) VALUES (2,'ANAND');
+INSERT INTO USERS (ID,NAME) VALUES (3,'AKASH');
+INSERT INTO USERS (ID,NAME) VALUES (4,'ROHIT');
+INSERT INTO USERS (ID,NAME) VALUES (5,'RAMESH');
+dbms_output.put_line('inserted successfully');
+END;
+/
+SELECT * from users;
+create or replace procedure greetings
+is
+begin
+dbms_output.put_line('hello aman');
+end;
+/
+execute greetings;
+
+
+begin
+greetings;
+end;
+/
